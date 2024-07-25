@@ -30,7 +30,9 @@ wget https://raw.githubusercontent.com/rohmatsb/pingbughost/main/linux-pingbugho
 5. Pastikan script selalu berjalan di latar belakang
 
 # Melalui Linux terminal
-Info : Untuk linux terminal bisa menggunakan cara yang hampir sama dengan Termux diatas
+Info : Untuk linux terminal bisa menggunakan cara yang hampir sama dengan Termux diatas\
+Catatan : ganti "pkg install wget -y" dengan paket manager distro kalian.\
+Contoh : "sudo apt install wget -y" "sudo dnf install wget -y"
 
 # Melalui Terminal Openwrt
 Info : Cara ini baru dites menggunakan Passwall Openwrt
