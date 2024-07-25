@@ -16,5 +16,40 @@ Cara ini hanya bisa dilakukan jika kalian memiliki dua koneksi WiFi, yaitu konek
 4. Jika sudah berjalan, pastikan script tersebut terus berjalan. Karena jika script berhenti, maka internet akan kembali putus-putus.
 
 # Melalui Termux Android
-1. Buka aplikasi VPN pilihan kalian.
-2. Masukkan termux ke dalam exclude list
+1. Buka termux
+2. Masukkan command
+```
+pkg install wget -y
+wget https://raw.githubusercontent.com/rohmatsb/pingbughost/main/linux-pingbughost.sh && chmod +x linux-pingbughost.sh
+```
+3. Selanjutnya buka aplikasi vpn pilihan kalian, masukkan termux dalam exclude list, agar mendapatkan koneksi direct.
+4. Jalankan command
+```   
+./linux-pingbughost.sh
+```
+5. Pastikan script selalu berjalan di latar belakang
+
+# Melalui Linux terminal
+Info : Untuk linux terminal bisa menggunakan cara yang hampir sama dengan Termux diatas
+
+# Melalui Terminal Openwrt
+Info : Cara ini baru dites menggunakan Passwall Openwrt
+
+Step 1 :
+Jalankan perintah dibawah :
+Jika belum ada wget, silahkan install wget terlebih dahulu
+
+```
+wget https://raw.githubusercontent.com/rohmatsb/pingbughost/main/linux-pingbughost.sh && chmod +x linux-pingbughost.sh
+```
+
+Step 2 :
+1. Masuk ke bagian Services > Passwall > Basic Setings > Mode
+2. Router Localhost TCP Proxy Mode = No Proxy
+3. Router Localhost UDP Proxy Mode = No Proxy
+4. Save Apply
+5. Dengan cara diatas terminal openwrt akan mendapatkan koneksi direct.
+6. Jalankan script dengan command
+```
+./linux-pingbughost.sh
+```
