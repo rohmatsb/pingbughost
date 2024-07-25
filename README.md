@@ -10,4 +10,11 @@ Inti utama dari script ini adalah melakukan ping ke bug host, melalui internet d
 
 # Melalui PC Windows
 Cara ini hanya bisa dilakukan jika kalian memiliki dua koneksi WiFi, yaitu koneksi direct internet dari modem, dan juga koneksi vpn proxied dari Openwrt.
-1. Taruh file pingbughost.
+1. Taruh file win-pingbughost.ps1 di folder mana saja di komputer
+2. Sambungkan laptop/pc windows ke wifi direct (tanpa vpn)
+3. Klik kanan file tersebut, pilih "Run with Powershell"
+4. Jika sudah berjalan, pastikan script tersebut terus berjalan. Karena jika script berhenti, maka internet akan kembali putus-putus.
+
+# Melalui Termux Android
+1. Buka aplikasi VPN pilihan kalian.
+2. Masukkan termux ke dalam exclude list
