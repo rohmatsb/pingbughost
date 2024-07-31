@@ -6,7 +6,13 @@ Siapkan salah satu dibawah ini :
 2. Linux / Termux
 3. Openwrt (direct internet pada terminal)
 
-Inti utama dari script ini adalah melakukan ping ke bug host, melalui internet direct (tanpa vpn). Script ini melakukan ping secara berulang-ulang ke hostname, bukan IP. Pada ping biasa, biasanya hostname akan diresolve menjadi ip, dan ping selanjutnya akan terus dilakukan ke ip tersebut. Namun agar bug tersebut tidak bengong, maka kita harus selalu ping ke hostname, bukan ip. Inti utamanya adalah kita harus melakukan resolve bug tersebut di DNS default XL.
+Inti utama dari script ini adalah melakukan ping ke bug host, melalui internet direct (tanpa vpn). Script ini melakukan ping secara berulang-ulang ke hostname, bukan IP. 
+
+Pada ping biasa, biasanya hostname akan diresolve menjadi ip, dan ping selanjutnya akan terus dilakukan ke ip tersebut. 
+
+Namun agar bug tersebut tidak bengong, maka kita harus selalu ping ke hostname, bukan ip. 
+
+Inti utamanya adalah, bug tersebut harus di resolve ke dns xl secara berkala.
 
 # Melalui PC Windows
 Cara ini hanya bisa dilakukan jika kalian memiliki dua koneksi WiFi, yaitu koneksi direct internet dari modem, dan juga koneksi vpn proxied dari Openwrt.
@@ -38,14 +44,17 @@ Contoh : "sudo apt install wget -y" "sudo dnf install wget -y"
 Info : Cara ini baru dites menggunakan Passwall Openwrt
 
 Step 1 :
-Jalankan perintah dibawah :
-Jika belum ada wget, silahkan install wget terlebih dahulu
-
+Jalankan perintah dibawah (install wget dan nohup)
+```
+opkg install wget coreutils -y
+```
+Step 2 :
+Download dan berikan izin eksekusi
 ```
 wget https://raw.githubusercontent.com/rohmatsb/pingbughost/main/linux-pingbughost.sh && chmod +x linux-pingbughost.sh
 ```
 
-Step 2 :
+Step 3 :
 1. Masuk ke bagian Services > Passwall > Basic Setings > Mode
 2. Router Localhost TCP Proxy Mode = No Proxy
 3. Router Localhost UDP Proxy Mode = No Proxy
@@ -53,5 +62,9 @@ Step 2 :
 5. Dengan cara diatas terminal openwrt akan mendapatkan koneksi direct.
 6. Jalankan script dengan command
 ```
-./linux-pingbughost.sh
+nohup ./linux-pingbughost.sh
 ```
+
+Catatan :
+- Untuk menghentikan script, cukup reboot openwrt nya
+- Jika listrik mati, script harus dijalankan ulang

@@ -3,3 +3,4 @@ while true; do
     ping -c 2 quiz.vidio.com
     sleep 30
 done
+# Script by https://github.com/rohmatsb/pingbughost
